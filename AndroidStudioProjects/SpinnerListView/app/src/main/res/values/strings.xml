@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Spinner&amp;ListView</string>
+    <string-array name="spinner">
+        <item>TextView</item>
+        <item>Plain Text</item>
+        <item>Password</item>
+        <item>Password numeric</item>
+        <item>E-mail</item>
+        <item>Phone</item>
+        <item>Postal address</item>
+        <item>Multiline text</item>
+    </string-array>
+    <string-array name="lista">
+        <item>Button</item>
+        <item>ImageButton</item>
+        <item>ChipGroup</item>
+        <item>Chip</item>
+        <item>CheckBox</item>
+        <item>RadioGroup</item>
+        <item>RadioButton</item>
+        <item>ToggleButton</item>
+        <item>Switch</item>
+        <item>FloatingActionButton</item>
+    </string-array>
+</resources>

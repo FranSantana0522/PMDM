@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Layouts</string>
+    <string name="nombre">Nombre</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="empresa">Empresa</string>
+    <string name="iniciarSesion">Iniciar sesion</string>
+    <string name="registrarse">Registrarse</string>
+</resources>

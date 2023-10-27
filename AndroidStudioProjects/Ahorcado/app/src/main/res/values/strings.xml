@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Ahorcado</string>
+    <string-array name="palabras">
+        <item>arbol</item>
+        <item>casa</item>
+        <item>ordenador</item>
+        <item>tabla</item>
+        <item>pescado</item>
+    </string-array>
+</resources>

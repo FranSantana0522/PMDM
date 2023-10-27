@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Layouts</string>
+    <string name="nombre">Name</string>
+    <string name="contraseña">Password</string>
+    <string name="empresa">Company</string>
+    <string name="iniciarSesion">Log in</string>
+    <string name="registrarse">Check in</string>
+</resources>
