@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NavigationDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Francisco Javier</string>
+    <string name="nav_header_subtitle">franciscojaviermontes2014@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Ajustes</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">Mas informacion</string>
+    <string name="foto">Foto de Sevilla</string>
+</resources>
