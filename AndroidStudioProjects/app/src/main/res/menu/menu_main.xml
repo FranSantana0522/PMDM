@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.listviewadddelete.MainActivity"
+    >
+    <item
+        android:id="@+id/boton_anadir"
+        android:icon = "@drawable/baseline_add_24"
+        app:showAsAction="always"
+        android:actionLayout="@layout/boton"
+        android:title="" />
+</menu>

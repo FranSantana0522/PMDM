@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ListViewAddDelete</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Lista de Personas</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string-array name="nombres">
+        <item>Fran</item>
+        <item>Dani</item>
+        <item>Manu</item>
+    </string-array>
+
+</resources>
