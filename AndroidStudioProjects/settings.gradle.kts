@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "ListViewAddDelete"
 include(":app")
+include(":app")
  
