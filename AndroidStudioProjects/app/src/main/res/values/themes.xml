@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.ListViewAddDelete" parent="Base.Theme.ListViewAddDelete" />
+    
+    <style name="imageBorder">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        
+    </style>
 </resources>
