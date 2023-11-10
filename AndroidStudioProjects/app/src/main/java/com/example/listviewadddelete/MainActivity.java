@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     ActivityMainBinding binding;
     AdaptadorLista adaptadorLista;
     ArrayList<Persona> listaPersona=new ArrayList<>();
-    Persona persona;
     ListView listView;
 
     @Override
