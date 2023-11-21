@@ -9,7 +9,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="784913ff-6d64-4b6a-b680-e6a37c570afc" name="Changes" comment="ListaAddDelete" />
+    <list default="true" id="784913ff-6d64-4b6a-b680-e6a37c570afc" name="Changes" comment="ListaAddDelete">
+      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/java/com/example/ex2ev1curso2023franciscojsantanamontes/Adaptador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/java/com/example/ex2ev1curso2023franciscojsantanamontes/ListaProductos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/java/com/example/ex2ev1curso2023franciscojsantanamontes/Producto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/java/com/example/ex2ev1curso2023franciscojsantanamontes/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/drawable/altavoz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/drawable/microfono.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/drawable/mousepad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/drawable/portatil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/drawable/raton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/drawable/usb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/layout/listaproductos.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/layout/producto.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +58,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/home/usuario/PMDM/AndroidStudioProjects/BottomNavigationViewsActivity",
+    "last_opened_file_path": "/home/usuario/PMDM/AndroidStudioProjects",
     "settings.editor.selected.configurable": "memory.settings"
   }
 }]]></component>
