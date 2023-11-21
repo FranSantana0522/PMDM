@@ -10,18 +10,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="784913ff-6d64-4b6a-b680-e6a37c570afc" name="Changes" comment="ListaAddDelete">
-      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/java/com/example/ex2ev1curso2023franciscojsantanamontes/Adaptador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/java/com/example/ex2ev1curso2023franciscojsantanamontes/ListaProductos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/java/com/example/ex2ev1curso2023franciscojsantanamontes/Producto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/java/com/example/ex2ev1curso2023franciscojsantanamontes/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/drawable/altavoz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/drawable/microfono.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/drawable/mousepad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/drawable/portatil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/drawable/raton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/drawable/usb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/layout/listaproductos.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FranciscoJSantanaMontesEx2Ev1Curso2023/app/src/main/res/layout/producto.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FragmentLista/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FragmentLista/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FragmentLista/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FragmentLista/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FragmentLista/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FragmentLista/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MultiScreenTablets/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MultiScreenTablets/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MultiScreenTablets/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MultiScreenTablets/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MultiScreenTablets/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/java/com/example/ex3ev1franciscojaviersantanamontes/DetalleProducto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/java/com/example/ex3ev1franciscojaviersantanamontes/DetalleProductoFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/java/com/example/ex3ev1franciscojaviersantanamontes/Producto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/java/com/example/ex3ev1franciscojaviersantanamontes/ProductosAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/drawable/altavoz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/drawable/microfono.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/drawable/mousepad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/drawable/portatil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/drawable/raton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/drawable/usb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/layout/activity_main_tablet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/layout/detalle_producto.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/values/bools.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/values/dimens.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -52,16 +66,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/home/usuario/PMDM/AndroidStudioProjects",
-    "settings.editor.selected.configurable": "memory.settings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/usuario/PMDM/AndroidStudioProjects&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;memory.settings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="android.template.691420455">
       <recent name="com.example.listviewadddelete" />
