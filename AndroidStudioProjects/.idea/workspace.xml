@@ -9,36 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="784913ff-6d64-4b6a-b680-e6a37c570afc" name="Changes" comment="ListaAddDelete">
-      <change afterPath="$PROJECT_DIR$/FragmentLista/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FragmentLista/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FragmentLista/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FragmentLista/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FragmentLista/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FragmentLista/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MultiScreenTablets/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MultiScreenTablets/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MultiScreenTablets/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MultiScreenTablets/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MultiScreenTablets/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/java/com/example/ex3ev1franciscojaviersantanamontes/DetalleProducto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/java/com/example/ex3ev1franciscojaviersantanamontes/DetalleProductoFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/java/com/example/ex3ev1franciscojaviersantanamontes/Producto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/java/com/example/ex3ev1franciscojaviersantanamontes/ProductosAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/drawable/altavoz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/drawable/microfono.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/drawable/mousepad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/drawable/portatil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/drawable/raton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/drawable/usb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/layout/activity_main_tablet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/layout/detalle_producto.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/values/bools.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="784913ff-6d64-4b6a-b680-e6a37c570afc" name="Changes" comment="ListaAddDelete" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

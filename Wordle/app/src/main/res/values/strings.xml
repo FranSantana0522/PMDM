@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Wordle</string>
+
+    <string-array name="listaPalabras">
+        <item>ARBOL</item>
+        <item>VATER</item>
+        <item>GATOS</item>
+        <item>ZORRO</item>
+        <item>CINCO</item>
+    </string-array>
+</resources>
