@@ -2,6 +2,7 @@ package com.example.wordle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 listaBtn.add(button);
             }
         }
-        String [] listaPalabras=new String[R.array.listaPalabras];
-        String palabra=listaPalabras[(int)Math.random()*listaPalabras.length];
+        Resources res = getResources();
+        String [] listaPalabras=res.getStringArray(R.array.listaPalabras);
+        String palabra=listaPalabras[(int) (Math.random() * 5)];
 
         EditText letraIntro=(EditText) findViewById(R.id.letraIntro);
         TextView textowin=(TextView) findViewById(R.id.textowin);
@@ -66,17 +68,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void letraCambio(Button botonTurno, String letra, String palabra){
+        letra= String.valueOf(letra.charAt(0));
+        letra=letra.toUpperCase();
+        botonTurno.setText(letra);
         if(palabra.contains(letra)) {
-            for(){
-                char [] palabraT= palabra.charAt(i);
-            }
-            for (int i = 0; i < palabra.length(); i++) {
-                if (palabra.charAt(i) == letr.charAt(0)) {
-                    builder.setCharAt(i, letr.charAt(0));
-                }
+            for(int i=0;i<palabra.length();i++){
+               if(palabra.charAt(i)==letra.charAt(0)){
+                   botonTurno.setBackgroundColor(getResources().getColor(R.color.verde));
+                   i=10;
+               }else {
+                   botonTurno.setBackgroundColor(getResources().getColor(R.color.naranja));
+                   i=10;
+               }
             }
         }else{
-
+            botonTurno.setBackgroundColor(getResources().getColor(R.color.gris));
         }
     }
 }
