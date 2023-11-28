@@ -9,7 +9,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="784913ff-6d64-4b6a-b680-e6a37c570afc" name="Changes" comment="ListaAddDelete" />
+    <list default="true" id="784913ff-6d64-4b6a-b680-e6a37c570afc" name="Changes" comment="ListaAddDelete">
+      <change afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/java/com/example/ex3ev1franciscojaviersantanamontes/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex3Ev1FranciscoJavierSantanaMontes/app/src/main/java/com/example/ex3ev1franciscojaviersantanamontes/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wordle/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Wordle/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

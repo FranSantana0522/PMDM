@@ -90,7 +90,9 @@ public class MainActivity extends AppCompatActivity {
         bundle.putString("description", producto.getDescripcion());
         fragment.setArguments(bundle);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container_detalle_tablet, fragment).addToBackStack(null).commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container_detalle_tablet, fragment)
+                .addToBackStack(null).commit();
     }
     private boolean esTablet() {
         return getResources().getBoolean(R.bool.es_tablet);
