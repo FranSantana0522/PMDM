@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             letra= String.valueOf(letra.charAt(0));
             letraCambio(listaBtn.get(cont),letra, palabra);
             cont++;
+
         });
 
     }
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     for (int j = 0; j < listaText.size(); j++) {
                         if (letra.equals(listaText.get(j).getText().toString())) {
                             listaText.get(j).setBackgroundColor(getResources().getColor(R.color.verde));
+                            listaText.remove(j);
                         }
                     }
                 } else {
@@ -58,10 +60,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 }
-                pos++;
-                if(pos==4){
-                    pos=0;
-                }
         }else{
             botonTurno.setBackgroundColor(getResources().getColor(R.color.gris));
             for(int j=0;j<listaText.size();j++){
@@ -69,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
                     listaText.get(j).setBackgroundColor(getResources().getColor(R.color.gris));
                 }
             }
+        }
+        pos++;
+        if(pos>4){
+            pos=0;
         }
     }
     public void listaBotones(){
