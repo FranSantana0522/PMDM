@@ -1,18 +1,25 @@
 package com.example.wordle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.res.Resources;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private Integer cont=0;
+    private Integer contV=0;
+    private Boolean win=false;
     ArrayList<Button> listaBtn=new ArrayList<>();
     ArrayList<TextView> listaText=new ArrayList<>();
     int pos=0;
@@ -33,17 +40,21 @@ public class MainActivity extends AppCompatActivity {
         accept.setOnClickListener(view->{
             String letra=letraIntro.getText().toString();
             letra= String.valueOf(letra.charAt(0));
-            letraCambio(listaBtn.get(cont),letra, palabra);
+            letraCambio(listaBtn.get(cont),letra, palabra,win);
             cont++;
-
+            if(comprobacionV(win, contV)){
+                textowin.setVisibility(View.VISIBLE);
+                win=true;
+            }
         });
 
     }
-    public void letraCambio(Button botonTurno, String letra, String palabra){
+    public void letraCambio(Button botonTurno, String letra, String palabra,Boolean win){
         letra= String.valueOf(letra.charAt(0));
         letra=letra.toUpperCase();
         botonTurno.setText(letra);
-        if(palabra.contains(letra)) {
+        if(!win){
+            if(palabra.contains(letra)) {
                 if (palabra.charAt(pos) == letra.charAt(0)) {
                     botonTurno.setBackgroundColor(getResources().getColor(R.color.verde));
                     for (int j = 0; j < listaText.size(); j++) {
@@ -60,18 +71,47 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 }
-        }else{
-            botonTurno.setBackgroundColor(getResources().getColor(R.color.gris));
-            for(int j=0;j<listaText.size();j++){
-                if(letra.equals(listaText.get(j).getText().toString())){
-                    listaText.get(j).setBackgroundColor(getResources().getColor(R.color.gris));
+            }else{
+                botonTurno.setBackgroundColor(getResources().getColor(R.color.gris));
+                for(int j=0;j<listaText.size();j++){
+                    if(letra.equals(listaText.get(j).getText().toString())){
+                        listaText.get(j).setBackgroundColor(getResources().getColor(R.color.gris));
+                    }
+                }
+            }
+            pos++;
+            if(pos>4){
+                pos=0;
+            }
+        }else {
+            Toast.makeText(this,"Ya has ganado",Toast.LENGTH_SHORT).show();
+        }
+    }
+    public boolean comprobacionV(Boolean win, Integer contV){
+        int n=5;
+        int max=25;
+        for(int i=0;i<n;i++) {
+            Drawable background = listaBtn.get(i).getBackground();
+            if (background instanceof ColorDrawable) {
+                int colorFondo = ((ColorDrawable) background).getColor();
+                int colorVerde = ContextCompat.getColor(this, R.color.verde);
+                if (colorFondo == colorVerde) {
+                    contV++;
+                    if (contV==5){
+                        win=true;
+                        break;
+                    }
+                }
+            }
+            //Termina la primera fila en i=4 sigue con la siguiente
+            if(i==(n-1)){
+                if (n<max){
+                    n=n+5;
+                    contV=0;
                 }
             }
         }
-        pos++;
-        if(pos>4){
-            pos=0;
-        }
+        return  win;
     }
     public void listaBotones(){
         Button btn1F1=(Button) findViewById(R.id.btn1F1);
