@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Button> listaBtn=new ArrayList<>();
     ArrayList<TextView> listaText=new ArrayList<>();
     EditText letraIntro;
-
+    TextView textowin;
+    Button accept;
     int n=5;
     int pos=0;
     @Override
@@ -38,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         String palabra=listaPalabras[(int) (Math.random() * 5)];
 
         letraIntro=(EditText) findViewById(R.id.letraIntro);
-        TextView textowin=(TextView) findViewById(R.id.textowin);
-        Button accept=(Button) findViewById(R.id.accept);
+        textowin=(TextView) findViewById(R.id.textowin);
+        accept=(Button) findViewById(R.id.accept);
 
         accept.setOnClickListener(view->{
             String letra=letraIntro.getText().toString();
@@ -47,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
             letraCambio(listaBtn.get(cont),letra, palabra,win);
             cont++;
             if(comprobacionV(win,palabra)){
+                textowin.setText("Has Ganado");
                 textowin.setVisibility(View.VISIBLE);
+                accept.setVisibility(View.INVISIBLE);
                 win=true;
             }
         });
@@ -93,25 +96,21 @@ public class MainActivity extends AppCompatActivity {
         String palabraFormada="";
         int indice=0;
         int max=25;
-        if(pos==n) {
-            for(int i=0;i<n;i++) {
+        if(pos%5==0) {
+            for(int i=n-5;i<n;i++) {
                 lista[indice]= (String) listaBtn.get(i).getText();
                 palabraFormada+=lista[indice];
                 if (palabraFormada.equals(palabra)) {
                     win=true;
                     break;
                 }
-
-                //Termina la primera fila en i=4 sigue con la siguiente
-                if(i==(n-1)){
-                    if (n<max){
-                        i=n;
-                        n=n+5;
-                        lista=new String[5];
-                        palabraFormada="";
-                    }
-                }
                 indice++;
+            }
+            n = n + 5;
+            if(n>=max+5){
+                textowin.setVisibility(View.VISIBLE);
+                letraIntro.setVisibility(View.INVISIBLE);
+                accept.setVisibility(View.INVISIBLE);
             }
             if(win){
                 letraIntro.setVisibility(View.INVISIBLE);
