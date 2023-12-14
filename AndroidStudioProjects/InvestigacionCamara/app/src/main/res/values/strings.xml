@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string name="app_name">MediaRecorder</string>
+    <string name="intro_message">
+        <![CDATA[
+This sample uses the camera/camcorder as the A/V source for the MediaRecorder API.
+A TextureView is used as the camera preview which limits the code to API 14+. This
+can be easily replaced with a SurfaceView to run on older devices.
+        ]]>
+    </string>
+
+    <string name="btnCapture">capture</string>
+
+</resources>
