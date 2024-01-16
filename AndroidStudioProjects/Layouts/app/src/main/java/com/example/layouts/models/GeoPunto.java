@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class GeoPunto {
     private Double longitud;
     private Double latitud;
-    private Byte imagen;
+    private Byte [] imagen; // Codigo ejemplo abaja de la clase
     private String url;
     private String comentario;
     private LocalDate fecha;
@@ -16,7 +16,7 @@ public class GeoPunto {
     public GeoPunto() {
     }
 
-    public GeoPunto(Double longitud, Double latitud, Byte imagen, String url, String comentario, LocalDate fecha, Integer valoracion, TipoLugar tipoLugar) {
+    public GeoPunto(Double longitud, Double latitud, Byte[] imagen, String url, String comentario, LocalDate fecha, Integer valoracion, TipoLugar tipoLugar) {
         this.longitud = longitud;
         this.latitud = latitud;
         this.imagen = imagen;
@@ -43,11 +43,11 @@ public class GeoPunto {
         this.latitud = latitud;
     }
 
-    public Byte getImagen() {
+    public Byte[] getImagen() {
         return imagen;
     }
 
-    public void setImagen(Byte imagen) {
+    public void setImagen(Byte[] imagen) {
         this.imagen = imagen;
     }
 
@@ -104,3 +104,29 @@ public class GeoPunto {
                 '}';
     }
 }
+
+//      File a1= new File("foto.jpeg");
+//		File a2= new File("CopiaImagen.jpeg");
+//		Byte b[]=new Byte[0];
+//		try {
+//			DataInputStream in = new DataInputStream(new FileInputStream(a1));
+//			Byte a;
+//			while(true) {
+//				a=in.readByte();
+//				b=Arrays.copyOf(b, b.length+1);
+//				b[b.length-1]=a;
+//			}
+//		}catch(EOFException e) {
+//			System.out.println("Fin lectura");
+//		}catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		try {
+//			DataOutputStream out=new DataOutputStream(new FileOutputStream(a2));
+//			for(Byte i: b) {
+//				out.writeByte(i);
+//			}
+//			out.close();
+//		}catch(IOException e) {
+//			e.printStackTrace();
+//		}
