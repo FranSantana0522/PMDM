@@ -1,7 +1,5 @@
 package com.example.layouts.models;
 
-import java.time.LocalDate;
-
 public class GeoPunto {
     private Double longitud;
     private Double latitud;
