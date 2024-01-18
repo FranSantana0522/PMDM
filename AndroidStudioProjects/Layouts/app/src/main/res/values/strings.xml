@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">Layouts</string>
     <string name="nombre">Nombre</string>
-    <string name="contraseña">Contraseña</string>
-    <string name="empresa">Empresa</string>
-    <string name="iniciarSesion">Iniciar sesion</string>
-    <string name="registrarse">Registrarse</string>
+    <string name="MONTANIA">Montaña</string>
+    <string name="RIO">Rio</string>
+    <string name="PLAYA">Playa</string>
+    <string name="ISLA">Isla</string>
+    <string name="VALLE">Valle</string>
+    <string name="PRADO">Prado</string>
+    <string name="LAGO">Lago</string>
+    <string name="CIUDAD">Ciudad</string>
+    <string name="PUEBLO">Pueblo</string>
 </resources>
