@@ -1,11 +1,11 @@
 package com.example.layouts;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,10 +16,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
-
-    private void setSupportActionBar(Toolbar toolbar) {
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
