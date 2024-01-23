@@ -1,0 +1,11 @@
+[
+  {
+    "featureType": "all",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#1e1e1e"
+      }
+    ]
+  }
+]
