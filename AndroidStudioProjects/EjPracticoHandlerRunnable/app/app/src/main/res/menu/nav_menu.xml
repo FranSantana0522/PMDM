@@ -1,0 +1,14 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_load"
+            android:title="Load Icon" />
+        <item
+            android:id="@+id/nav_other"
+            android:title="Other Button" />
+        <item
+            android:id="@+id/nav_clear"
+            android:title="Clear" />
+    </group>
+</menu>

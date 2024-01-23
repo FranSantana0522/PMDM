@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ExposicionEjemplo</string>
+    <string name="play_button">Play</string>
+    <string name="hide_button">Hide</string>
+    <string name="stop_button">Stop</string>
+    <string name="skip_next_button">Skip Next</string>
+    <string name="restart_button">Restart</string>
+</resources>
