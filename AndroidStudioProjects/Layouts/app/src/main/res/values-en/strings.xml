@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Layouts</string>
-    <string name="nombre">Name</string>
+    <string name="nombre">Sites</string>
     <string name="MONTANIA">Mountain</string>
     <string name="RIO">River</string>
     <string name="PLAYA">Beach</string>
@@ -11,4 +11,5 @@
     <string name="LAGO">Lake</string>
     <string name="CIUDAD">City</string>
     <string name="PUEBLO">Town</string>
+    <string name="preferencias">Preferences</string>
 </resources>

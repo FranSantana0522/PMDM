@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Layouts</string>
-    <string name="nombre">Nombre</string>
+    <string name="nombre">Lugares</string>
     <string name="MONTANIA">Montaña</string>
     <string name="RIO">Rio</string>
     <string name="PLAYA">Playa</string>
@@ -10,4 +10,5 @@
     <string name="LAGO">Lago</string>
     <string name="CIUDAD">Ciudad</string>
     <string name="PUEBLO">Pueblo</string>
+    <string name="preferencias">Preferencias</string>
 </resources>
