@@ -6,7 +6,7 @@ import com.example.layouts.models.Lugar;
 import java.util.ArrayList;
 
 public interface ListaLugaresRepository {
-    ArrayList<ListaLugares> obtenerListaDeLugares();
+    ListaLugares obtenerListaDeLugares();
     void añadirLugar(Lugar lugar);
     void borrarLugar(Lugar lugar);
     void editarLugar(Lugar lugar);

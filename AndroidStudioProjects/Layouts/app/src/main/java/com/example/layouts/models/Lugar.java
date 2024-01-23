@@ -3,6 +3,8 @@ package com.example.layouts.models;
 import java.time.LocalDate;
 
 public class Lugar {
+
+    private Integer id;
     private String nombre;
     private String direccion;
     private GeoPunto infoLugar;
@@ -98,6 +100,14 @@ public class Lugar {
 
     public void setTipoLugar(TipoLugar tipoLugar) {
         this.tipoLugar = tipoLugar;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @Override
