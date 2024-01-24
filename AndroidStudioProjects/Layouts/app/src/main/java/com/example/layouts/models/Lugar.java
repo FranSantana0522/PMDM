@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Lugar {
 
-    private Integer id;
+    private Integer id=0;
     private String nombre;
     private String direccion;
     private GeoPunto infoLugar;
@@ -19,6 +19,7 @@ public class Lugar {
     }
 
     public Lugar(String nombre, String direccion, GeoPunto infoLugar, String imagen, String url, String comentario, LocalDate fecha, Double valoracion, TipoLugar tipoLugar) {
+        this.id++;
         this.nombre = nombre;
         this.direccion = direccion;
         this.infoLugar = infoLugar;

@@ -12,4 +12,5 @@
     <string name="CIUDAD">City</string>
     <string name="PUEBLO">Town</string>
     <string name="preferencias">Preferences</string>
+    <string name="acercaDe">About</string>
 </resources>

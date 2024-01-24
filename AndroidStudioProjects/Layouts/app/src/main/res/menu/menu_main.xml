@@ -14,5 +14,10 @@
         android:orderInCategory="100"
         android:title="@string/preferencias"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/acercaDe"
+        android:orderInCategory="100"
+        android:title="@string/acercaDe"
+        app:showAsAction="never" />
 
 </menu>

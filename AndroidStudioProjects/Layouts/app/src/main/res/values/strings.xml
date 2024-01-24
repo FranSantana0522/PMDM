@@ -11,4 +11,5 @@
     <string name="CIUDAD">Ciudad</string>
     <string name="PUEBLO">Pueblo</string>
     <string name="preferencias">Preferencias</string>
+    <string name="acercaDe">Acerca de</string>
 </resources>
