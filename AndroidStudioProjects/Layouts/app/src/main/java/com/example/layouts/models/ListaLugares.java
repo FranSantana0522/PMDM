@@ -1,6 +1,9 @@
 package com.example.layouts.models;
 
 import android.content.Context;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import com.example.layouts.models.repository.ListaLugaresRepository;
 import com.example.layouts.models.repository.impl.ListaLugaresRepositoryImpl;
@@ -12,13 +15,15 @@ public class ListaLugares {
 
     private Context context;
 
-    private ListaLugaresRepository listaLugaresRepository=new ListaLugaresRepositoryImpl(context);
+    private ListaLugaresRepository listaLugaresRepository;
 
     public ListaLugares() {
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public ListaLugares(Context context) {
         this.context = context;
+        this.listaLugaresRepository=new ListaLugaresRepositoryImpl(context);
     }
 
     public ListaLugares ObtenerListaLugares(){

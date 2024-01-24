@@ -4,8 +4,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
+
+import com.example.layouts.R;
 import com.example.layouts.models.GeoPunto;
 import com.example.layouts.models.ListaLugares;
 import com.example.layouts.models.Lugar;
@@ -18,17 +22,20 @@ public class ListaLugaresRepositoryImpl implements ListaLugaresRepository {
 
     private BDSqlite bdSqlite;
     private Context context;
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public ListaLugaresRepositoryImpl(Context context) {
         this.context = context;
         bdSqlite = new BDSqlite(context);
     }
+
     @Override
     public ListaLugares obtenerListaDeLugares() {
         SQLiteDatabase db = bdSqlite.getReadableDatabase();
         String[] projection = null;
         ListaLugares listaLugaresObj = new ListaLugares();
         Cursor cursor = db.query(
-                "lugar",  // Reemplaza con el nombre real de tu tabla
+                "lugar",
                 projection,
                 null,
                 null,
@@ -37,33 +44,30 @@ public class ListaLugaresRepositoryImpl implements ListaLugaresRepository {
                 null
         );
 
-        // Procesar los resultados del cursor y agregarlos a la lista
         while (cursor.moveToNext()) {
-            // Obtén todos los campos de la tabla según tu esquema de base de datos
             int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
             String nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre"));
             String direccion = cursor.getString(cursor.getColumnIndexOrThrow("direccion"));
             double longitud = cursor.getDouble(cursor.getColumnIndexOrThrow("longitud"));
             double latitud = cursor.getDouble(cursor.getColumnIndexOrThrow("latitud"));
-            String foto = cursor.getString(cursor.getColumnIndexOrThrow("foto"));
+            String imagen = cursor.getString(cursor.getColumnIndexOrThrow("imagen"));
             String url = cursor.getString(cursor.getColumnIndexOrThrow("url"));
             String comentario = cursor.getString(cursor.getColumnIndexOrThrow("comentario"));
             String fechaStr = cursor.getString(cursor.getColumnIndexOrThrow("fecha"));
-            LocalDate fecha = null; // Convierte la fecha de String a LocalDate
+            LocalDate fecha = null;
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                 fecha = LocalDate.parse(fechaStr);
             }
-            int valoracion = cursor.getInt(cursor.getColumnIndexOrThrow("valoracion"));
+            double valoracion = cursor.getDouble(cursor.getColumnIndexOrThrow("valoracion"));
             String tipoLugarStr = cursor.getString(cursor.getColumnIndexOrThrow("tipolugar"));
-            TipoLugar tipoLugar = TipoLugar.valueOf(tipoLugarStr); // Convierte el tipo de lugar de String a TipoLugar
+            TipoLugar tipoLugar = TipoLugar.valueOf(tipoLugarStr);
 
-            // Crea un objeto Lugar y establece los campos
             Lugar lugar = new Lugar();
             lugar.setId(id);
             lugar.setNombre(nombre);
             lugar.setDireccion(direccion);
             lugar.setInfoLugar(new GeoPunto(latitud, longitud));
-            lugar.setImagen(foto);
+            lugar.setImagen(imagen);
             lugar.setUrl(url);
             lugar.setComentario(comentario);
             lugar.setFecha(fecha);

@@ -10,7 +10,7 @@ public class BDSqlite extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Lugares.db";
 
     public static final String SQL_CREATE_ENTRIES = "CREATE TABLE lugar(id integer primary key, nombre text, direccion text," +
-            "longitud real, latitud real, foto text, url text, comentario text, fecha text, valoracion real, tipolugar text )";
+            "longitud real, latitud real, imagen text, url text, comentario text, fecha text, valoracion real, tipolugar text )";
 
     public static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS lugar";

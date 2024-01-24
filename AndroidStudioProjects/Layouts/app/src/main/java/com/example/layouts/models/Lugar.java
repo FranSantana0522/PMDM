@@ -12,13 +12,13 @@ public class Lugar {
     private String url;
     private String comentario;
     private LocalDate fecha;
-    private Integer valoracion;
+    private Double valoracion;
     private TipoLugar tipoLugar;
 
     public Lugar() {
     }
 
-    public Lugar(String nombre, String direccion, GeoPunto infoLugar, String imagen, String url, String comentario, LocalDate fecha, Integer valoracion, TipoLugar tipoLugar) {
+    public Lugar(String nombre, String direccion, GeoPunto infoLugar, String imagen, String url, String comentario, LocalDate fecha, Double valoracion, TipoLugar tipoLugar) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.infoLugar = infoLugar;
@@ -86,11 +86,11 @@ public class Lugar {
         this.fecha = fecha;
     }
 
-    public Integer getValoracion() {
+    public Double getValoracion() {
         return valoracion;
     }
 
-    public void setValoracion(Integer valoracion) {
+    public void setValoracion(Double valoracion) {
         this.valoracion = valoracion;
     }
 
