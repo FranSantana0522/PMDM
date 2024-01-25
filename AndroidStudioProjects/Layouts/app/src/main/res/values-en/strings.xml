@@ -13,4 +13,12 @@
     <string name="PUEBLO">Town</string>
     <string name="preferencias">Preferences</string>
     <string name="acercaDe">About</string>
+    <string name="configuracion">Configuration</string>
+    <string name="temaOscuro">Dark Theme</string>
+    <string name="temaOscuroDescrip">Active dark theme</string>
+    <string name="borrarDB">Wipe data</string>
+    <string name="borrarDBDecrip">Delete all sites</string>
+    <string name="confirmacionDBBorrar">Are you sure you want to clear all data?</string>
+    <string name="si">Yes</string>
+
 </resources>

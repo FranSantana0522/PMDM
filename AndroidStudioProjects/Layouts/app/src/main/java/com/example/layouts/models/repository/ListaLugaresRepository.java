@@ -10,4 +10,5 @@ public interface ListaLugaresRepository {
     void añadirLugar(Lugar lugar);
     void borrarLugar(Lugar lugar);
     void editarLugar(Lugar lugar);
+    void borrarTodo();
 }

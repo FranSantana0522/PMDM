@@ -149,4 +149,18 @@ public class ListaLugaresRepositoryImpl implements ListaLugaresRepository {
             Toast.makeText(context, "No se ha podido editar", Toast.LENGTH_SHORT).show();
         }
     }
+
+    @Override
+    public void borrarTodo() {
+        SQLiteDatabase db = bdSqlite.getWritableDatabase();
+
+        int deletedRows = db.delete("lugar", null, null);
+
+        if (deletedRows > 0) {
+            Toast.makeText(context, "Se han borrado todos los lugares correctamente", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "No se ha podido borrar todos los lugares", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }

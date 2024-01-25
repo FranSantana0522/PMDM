@@ -12,4 +12,12 @@
     <string name="PUEBLO">Pueblo</string>
     <string name="preferencias">Preferencias</string>
     <string name="acercaDe">Acerca de</string>
+    <string name="configuracion">Configuracion</string>
+    <string name="temaOscuro">Tema Oscuro</string>
+    <string name="temaOscuroDescrip">Habilitar tema oscuro</string>
+    <string name="borrarDB">Limpiar Datos</string>
+    <string name="borrarDBDecrip">Elimina todos los lugares</string>
+    <string name="confirmacionDBBorrar">¿Estas seguro de limpiar todos los datos?</string>
+    <string name="si">Si</string>
+
 </resources>

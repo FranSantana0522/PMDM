@@ -42,6 +42,10 @@ public class ListaLugares {
         listaLugaresRepository.borrarLugar(lugar);
     }
 
+    public void borrarTodo(){
+        listaLugaresRepository.borrarTodo();
+    }
+
     public ListaLugares(ArrayList<Lugar> listaLugares) {
         this.listaLugares = listaLugares;
     }
