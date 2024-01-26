@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -45,27 +46,18 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(lugaresAdapter);
 
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            String key = extras.toString();
-            if ("delete".equals(key)) {
-                listaLugares.borrarTodo();
-                lugaresAdapter.notifyDataSetChanged();
-            }
+        borrarTo(listaLugares);
+    }
+    private void borrarTo(ListaLugares listaLugares) {
+        String delete = PreferenceManager.getDefaultSharedPreferences(this)
+                    .getString("pref_key_eliminate_all", "");
+        if("delete".equals(delete)){
+            listaLugares.borrarTodo();
+            lugaresAdapter.notifyDataSetChanged();
         }
+
     }
 
-        public void handleConfirmation(Bundle bundle) {
-            String confirmationMessage = "";
-            if (bundle != null && bundle.containsKey("delete")) {
-                confirmationMessage = bundle.getString("delete", "delete");
-                Log.d("AAAAAA", "Mensaje de confirmación: " + confirmationMessage);
-                if ("delete".equals(confirmationMessage)) {
-                    listaLugares.borrarTodo();
-                    lugaresAdapter.notifyDataSetChanged();
-                }
-            }
-        }
 
 
         @Override

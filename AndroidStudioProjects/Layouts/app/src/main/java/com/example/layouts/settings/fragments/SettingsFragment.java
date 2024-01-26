@@ -1,25 +1,23 @@
 package com.example.layouts.settings.fragments;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.ContextThemeWrapper;
+import android.preference.PreferenceManager;
+import android.util.Log;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceManager;
-
-import com.example.layouts.MainActivity;
 import com.example.layouts.R;
-import com.example.layouts.settings.SettingsActivity;
+
+import java.net.URISyntaxException;
+
 
 public class SettingsFragment extends PreferenceFragmentCompat {
+
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -59,7 +57,11 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         builder.setPositiveButton(R.string.si, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                sendConfirmationMessageToMainActivity();
+                try {
+                    sendConfirmationMessageToMainActivity();
+                } catch (URISyntaxException e) {
+                    throw new RuntimeException(e);
+                }
                 dialog.dismiss();
             }
         });
@@ -72,10 +74,12 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         builder.show();
     }
 
-
-    private void sendConfirmationMessageToMainActivity() {
-            Bundle bundle = new Bundle();
-            bundle.putString("delete", "delete");
-            ((SettingsActivity) getActivity()).startMainActivityWithBundle(bundle);
+    private void sendConfirmationMessageToMainActivity() throws URISyntaxException {
+        Log.d("AAAAAAAAAAAAAAAAA","LLega aqui");
+        Preference deleteAll = findPreference("pref_key_eliminate_all");
+        deleteAll.setIntent(
+                Intent.getIntent(PreferenceManager.getDefaultSharedPreferences(getContext())
+                        .getString("pref_key_eliminate_all", "delete"))
+        );
     }
 }
