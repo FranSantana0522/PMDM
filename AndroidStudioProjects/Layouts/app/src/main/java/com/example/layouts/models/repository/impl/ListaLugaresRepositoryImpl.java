@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -21,12 +22,14 @@ import java.util.ArrayList;
 public class ListaLugaresRepositoryImpl implements ListaLugaresRepository {
 
     private BDSqlite bdSqlite;
-    private Context context;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public ListaLugaresRepositoryImpl(Context context) {
-        this.context = context;
-        bdSqlite = new BDSqlite(context);
+        try {
+            bdSqlite = new BDSqlite(context);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -100,9 +103,9 @@ public class ListaLugaresRepositoryImpl implements ListaLugaresRepository {
 
         long newRowId = db.insert("lugar", null, values);
         if (newRowId != -1) {
-            Toast.makeText(context, "Se ha insertado correctamente", Toast.LENGTH_SHORT).show();
+            Log.d("BD","Se añadio correctamente");
         } else {
-            Toast.makeText(context, "No se ha podido insertar", Toast.LENGTH_SHORT).show();
+            Log.d("BD","No se pudo añadir");
         }
     }
 
@@ -116,9 +119,9 @@ public class ListaLugaresRepositoryImpl implements ListaLugaresRepository {
         int deletedRows = db.delete("lugar", selection, selectionArgs);
 
         if (deletedRows > 0) {
-            Toast.makeText(context, "Se ha borrado correctamente", Toast.LENGTH_SHORT).show();
+            Log.d("BD","Se borro correctamente");
         } else {
-            Toast.makeText(context, "No se ha podido borrar", Toast.LENGTH_SHORT).show();
+            Log.d("BD","No se pudo borrar");
         }
     }
 
@@ -144,9 +147,9 @@ public class ListaLugaresRepositoryImpl implements ListaLugaresRepository {
         int updatedRows = db.update("lugar", values, selection, selectionArgs);
 
         if (updatedRows > 0) {
-            Toast.makeText(context, "Se ha editado correctamente", Toast.LENGTH_SHORT).show();
+            Log.d("BD","Se edito correctamente");
         } else {
-            Toast.makeText(context, "No se ha podido editar", Toast.LENGTH_SHORT).show();
+            Log.d("BD","No se pudo editar");
         }
     }
 
@@ -157,9 +160,9 @@ public class ListaLugaresRepositoryImpl implements ListaLugaresRepository {
         int deletedRows = db.delete("lugar", null, null);
 
         if (deletedRows > 0) {
-            Toast.makeText(context, "Se han borrado todos los lugares correctamente", Toast.LENGTH_SHORT).show();
+            Log.d("BD","Se borro todos los datos correctamente");
         } else {
-            Toast.makeText(context, "No se ha podido borrar todos los lugares", Toast.LENGTH_SHORT).show();
+            Log.d("BD","No se pudo borrar los datos");
         }
     }
 

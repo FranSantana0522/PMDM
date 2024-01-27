@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,13 +12,14 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import com.example.layouts.models.GeoPunto;
 import com.example.layouts.models.ListaLugares;
 import com.example.layouts.models.Lugar;
 import com.example.layouts.models.LugaresAdapter;
 import com.example.layouts.models.TipoLugar;
 import com.example.layouts.settings.SettingsActivity;
+import com.example.layouts.settings.fragments.SettingsFragment;
+
 import java.time.LocalDate;
 
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        listaLugares = new ListaLugares(this);
+        listaLugares = ListaLugares.getInstance(this);
 
         //cargarListaDesdeBD(listaLugares);
         listaLugares = listaLugares.ObtenerListaLugares();
@@ -45,20 +45,12 @@ public class MainActivity extends AppCompatActivity {
         lugaresAdapter = new LugaresAdapter(this, listaLugares.getListaLugares());
         recyclerView.setAdapter(lugaresAdapter);
 
-
-        borrarTo(listaLugares);
-    }
-    private void borrarTo(ListaLugares listaLugares) {
-        String delete = PreferenceManager.getDefaultSharedPreferences(this)
-                    .getString("pref_key_eliminate_all", "");
-        if("delete".equals(delete)){
+        if (getIntent().getBooleanExtra("borrar_datos", false)) {
+            Log.d("Main","Dentro del if");
             listaLugares.borrarTodo();
             lugaresAdapter.notifyDataSetChanged();
         }
-
     }
-
-
 
         @Override
     public boolean onCreateOptionsMenu(Menu menu) {

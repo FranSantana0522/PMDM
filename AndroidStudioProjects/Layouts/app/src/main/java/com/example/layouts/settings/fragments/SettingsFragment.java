@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
@@ -57,11 +58,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         builder.setPositiveButton(R.string.si, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                try {
-                    sendConfirmationMessageToMainActivity();
-                } catch (URISyntaxException e) {
-                    throw new RuntimeException(e);
-                }
+                enviarDatos();
                 dialog.dismiss();
             }
         });
@@ -74,12 +71,22 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         builder.show();
     }
 
-    private void sendConfirmationMessageToMainActivity() throws URISyntaxException {
-        Log.d("AAAAAAAAAAAAAAAAA","LLega aqui");
-        Preference deleteAll = findPreference("pref_key_eliminate_all");
-        deleteAll.setIntent(
-                Intent.getIntent(PreferenceManager.getDefaultSharedPreferences(getContext())
-                        .getString("pref_key_eliminate_all", "delete"))
-        );
+    private void enviarDatos() {
+        sendDataToActivity();
+    }
+    private void sendDataToActivity() {
+        Bundle bundle = new Bundle();
+        bundle.putString("clave", "delete");
+        bundle.putBoolean("borrar_datos", true);
+        dataPasser.onDataPass(bundle);
+    }
+    public interface OnDataPass {
+        void onDataPass(Bundle data);
+    }
+    private OnDataPass dataPasser;
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        dataPasser = (OnDataPass) context;
     }
 }

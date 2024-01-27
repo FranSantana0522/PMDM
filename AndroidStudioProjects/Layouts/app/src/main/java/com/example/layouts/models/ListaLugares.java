@@ -1,5 +1,6 @@
 package com.example.layouts.models;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 
@@ -11,43 +12,45 @@ import com.example.layouts.models.repository.impl.ListaLugaresRepositoryImpl;
 import java.util.ArrayList;
 
 public class ListaLugares {
+    private static ListaLugares instance;
     private ArrayList<Lugar> listaLugares = new ArrayList<>();
-
     private Context context;
-
     private ListaLugaresRepository listaLugaresRepository;
 
     public ListaLugares() {
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public ListaLugares(Context context) {
+    @SuppressLint("NewApi")
+    private ListaLugares(Context context) {
         this.context = context;
-        this.listaLugaresRepository=new ListaLugaresRepositoryImpl(context);
+        this.listaLugaresRepository = new ListaLugaresRepositoryImpl(context);
     }
 
-    public ListaLugares ObtenerListaLugares(){
+    public static ListaLugares getInstance(Context context) {
+        if (instance == null) {
+            instance = new ListaLugares(context);
+        }
+        return instance;
+    }
+
+    public ListaLugares ObtenerListaLugares() {
         return listaLugaresRepository.obtenerListaDeLugares();
     }
 
-    public void añadirLugares(Lugar lugar){
+    public void añadirLugares(Lugar lugar) {
         listaLugaresRepository.añadirLugar(lugar);
     }
 
-    public void editarLugar(Lugar lugar){
+    public void editarLugar(Lugar lugar) {
         listaLugaresRepository.editarLugar(lugar);
     }
 
-    public void borrarLugar(Lugar lugar){
+    public void borrarLugar(Lugar lugar) {
         listaLugaresRepository.borrarLugar(lugar);
     }
 
-    public void borrarTodo(){
+    public void borrarTodo() {
         listaLugaresRepository.borrarTodo();
-    }
-
-    public ListaLugares(ArrayList<Lugar> listaLugares) {
-        this.listaLugares = listaLugares;
     }
 
     public ArrayList<Lugar> getListaLugares() {
