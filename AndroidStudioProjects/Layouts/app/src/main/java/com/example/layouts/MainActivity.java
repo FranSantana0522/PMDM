@@ -2,23 +2,29 @@ package com.example.layouts;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.layouts.fragments.AcercaDe;
+import com.example.layouts.fragments.AñadirLugar;
+import com.example.layouts.fragments.detalleLugar;
 import com.example.layouts.models.GeoPunto;
 import com.example.layouts.models.ListaLugares;
 import com.example.layouts.models.Lugar;
 import com.example.layouts.models.LugaresAdapter;
 import com.example.layouts.models.TipoLugar;
 import com.example.layouts.settings.SettingsActivity;
-import com.example.layouts.settings.fragments.SettingsFragment;
 
 import java.time.LocalDate;
 
@@ -36,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        listaLugares = ListaLugares.getInstance(this);
+        temaOscuro();
+        listaLugares = ((Aplicacion) getApplication()).listaLugares;
 
         //cargarListaDesdeBD(listaLugares);
         listaLugares = listaLugares.ObtenerListaLugares();
@@ -50,9 +57,20 @@ public class MainActivity extends AppCompatActivity {
             listaLugares.borrarTodo();
             lugaresAdapter.notifyDataSetChanged();
         }
+        lugaresAdapter.setOnItemClickListener(new LugaresAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Lugar lugar) {
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("lugar", lugar);
+                detalleLugar fragment = new detalleLugar();
+                fragment.setArguments(bundle);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frame_container, fragment)
+                        .commit();
+            }
+        });
     }
-
-        @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -67,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.añadir) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.frame_container, new AñadirLugar())
+                    .commit();
             return true;
         }
 
@@ -77,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(id == R.id.acercaDe){
+            Intent intent = new Intent(this, AcercaDe.class);
+            startActivity(intent);
             return  true;
         }
 
@@ -95,6 +118,15 @@ public class MainActivity extends AppCompatActivity {
         listaLugares.añadirLugares(new Lugar("Rio Guadalquivir","Sevilla",new GeoPunto(37.369489, -5.992910),String.valueOf(R.drawable.rio),"https://maps.app.goo.gl/TdYZcvUcoNcRD8y46","Rio Guadalquivir al paso de Sevilla",LocalDate.of(2024,1,24),5.0,TipoLugar.RIO));
         listaLugares.añadirLugares(new Lugar("Valle de Cuelgamuros","Valle de Cuelgamuros",new GeoPunto(40.641559, -4.150996),String.valueOf(R.drawable.valle),"https://maps.app.goo.gl/3DgJ38emZrEnt46w6","Monumento",LocalDate.of(2024,1,24),4.4,TipoLugar.VALLE));
 
+    }
+    private void temaOscuro() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean isDarkThemeEnabled = sharedPreferences.getBoolean("pref_key_dark_theme", false);
+        if (isDarkThemeEnabled) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
 
     public LugaresAdapter getLugaresAdapter() {

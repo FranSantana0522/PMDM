@@ -16,11 +16,21 @@ public class LugaresAdapter extends RecyclerView.Adapter<LugaresAdapter.LugarVie
 
     private List<Lugar> listaLugares;
     private LayoutInflater inflater;
+    private OnItemClickListener clickListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(Lugar lugar);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.clickListener = listener;
+    }
+
 
     public LugaresAdapter(Context context, List<Lugar> listaLugares) {
         this.inflater = LayoutInflater.from(context);
         this.listaLugares = listaLugares;
     }
+
 
     @NonNull
     @Override
@@ -33,6 +43,14 @@ public class LugaresAdapter extends RecyclerView.Adapter<LugaresAdapter.LugarVie
     public void onBindViewHolder(@NonNull LugarViewHolder holder, int position) {
         Lugar lugar = listaLugares.get(position);
         holder.bind(lugar);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (clickListener != null) {
+                    clickListener.onItemClick(lugar);
+                }
+            }
+        });
     }
 
     @Override
@@ -50,7 +68,7 @@ public class LugaresAdapter extends RecyclerView.Adapter<LugaresAdapter.LugarVie
             super(itemView);
             imagenImageView = itemView.findViewById(R.id.imagenImageView);
             nombreTextView = itemView.findViewById(R.id.nombreTextView);
-            ratingBar = itemView.findViewById(R.id.ratingBar);
+            ratingBar = itemView.findViewById(R.id.barraValoracion);
         }
 
         public void bind(Lugar lugar) {

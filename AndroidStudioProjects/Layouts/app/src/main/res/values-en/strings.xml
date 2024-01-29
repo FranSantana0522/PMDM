@@ -20,5 +20,12 @@
     <string name="borrarDBDecrip">Delete all sites</string>
     <string name="confirmacionDBBorrar">Are you sure you want to clear all data?</string>
     <string name="si">Yes</string>
+    <string name="acercaDeText">Application of My Places, with ratings, location, coordinates, photos, URLs, etc.</string>
+    <string name="nombreLugar">Name</string>
+    <string name="direccionLugar">Address</string>
+    <string name="longitud">Longitude</string>
+    <string name="latitud">Latitude</string>
+    <string name="comentarioLugar">Comment</string>
+    <string name="aceptarLugar">Add Site</string>
 
 </resources>

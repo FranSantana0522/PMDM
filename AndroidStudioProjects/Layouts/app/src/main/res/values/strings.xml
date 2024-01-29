@@ -19,5 +19,12 @@
     <string name="borrarDBDecrip">Elimina todos los lugares</string>
     <string name="confirmacionDBBorrar">¿Estas seguro de limpiar todos los datos?</string>
     <string name="si">Si</string>
+    <string name="acercaDeText">Aplicacion de mis lugares, con valoracion, ubicacion, coordenadas, fotos, urls, etc.</string>
+    <string name="nombreLugar">Nombre</string>
+    <string name="direccionLugar">Direccion</string>
+    <string name="longitud">Longitud</string>
+    <string name="latitud">Latitud</string>
+    <string name="comentarioLugar">Comentario</string>
+    <string name="aceptarLugar">Añadir lugar</string>
 
 </resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/configuracion">
+
+        <CheckBoxPreference
+            android:key="pref_key_dark_theme"
+            android:title="@string/temaOscuro"
+            android:summary="@string/temaOscuroDescrip"
+            android:defaultValue="false"
+            />
+
+        <Preference
+            android:key="pref_key_eliminate_all"
+            android:title="@string/borrarDB"
+            android:summary="@string/borrarDBDecrip"
+            android:defaultValue="false"
+            />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

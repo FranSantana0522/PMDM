@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nombre">Sites</string>
+    <string name="MONTANIA">Mountain</string>
+    <string name="RIO">River</string>
+    <string name="PLAYA">Beach</string>
+    <string name="ISLA">Island</string>
+    <string name="VALLE">Valley</string>
+    <string name="PRADO">field</string>
+    <string name="LAGO">Lake</string>
+    <string name="CIUDAD">City</string>
+    <string name="PUEBLO">Town</string>
+    <string name="preferencias">Preferences</string>
+    <string name="acercaDe">About</string>
+    <string name="configuracion">Configuration</string>
+    <string name="temaOscuro">Dark Theme</string>
+    <string name="temaOscuroDescrip">Active dark theme</string>
+    <string name="borrarDB">Wipe data</string>
+    <string name="borrarDBDecrip">Delete all sites</string>
+    <string name="confirmacionDBBorrar">Are you sure you want to clear all data?</string>
+    <string name="si">Yes</string>
+    <string name="acercaDeText">Application of My Places, with ratings, location, coordinates, photos, URLs, etc.</string>
+    <string name="nombreLugar">Name</string>
+    <string name="direccionLugar">Address</string>
+    <string name="longitud">Longitude</string>
+    <string name="latitud">Latitude</string>
+    <string name="comentarioLugar">Comment</string>
+    <string name="aceptarLugar">Add Site</string>
+    <string name="volver">Back</string>
+    <string name="borrar">Delete</string>
+</resources>

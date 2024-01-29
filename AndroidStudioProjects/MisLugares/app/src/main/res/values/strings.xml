@@ -1,0 +1,30 @@
+<resources>
+    <string name="nombre">Lugares</string>
+    <string name="MONTANIA">Montaña</string>
+    <string name="RIO">Rio</string>
+    <string name="PLAYA">Playa</string>
+    <string name="ISLA">Isla</string>
+    <string name="VALLE">Valle</string>
+    <string name="PRADO">Prado</string>
+    <string name="LAGO">Lago</string>
+    <string name="CIUDAD">Ciudad</string>
+    <string name="PUEBLO">Pueblo</string>
+    <string name="preferencias">Preferencias</string>
+    <string name="acercaDe">Acerca de</string>
+    <string name="configuracion">Configuracion</string>
+    <string name="temaOscuro">Tema Oscuro</string>
+    <string name="temaOscuroDescrip">Habilitar tema oscuro</string>
+    <string name="borrarDB">Limpiar Datos</string>
+    <string name="borrarDBDecrip">Elimina todos los lugares</string>
+    <string name="confirmacionDBBorrar">¿Estas seguro de limpiar todos los datos?</string>
+    <string name="si">Si</string>
+    <string name="acercaDeText">Aplicacion de mis lugares, con valoracion, ubicacion, coordenadas, fotos, urls, etc.</string>
+    <string name="nombreLugar">Nombre</string>
+    <string name="direccionLugar">Direccion</string>
+    <string name="longitud">Longitud</string>
+    <string name="latitud">Latitud</string>
+    <string name="comentarioLugar">Comentario</string>
+    <string name="aceptarLugar">Añadir lugar</string>
+    <string name="volver">Volver</string>
+    <string name="borrar">Borrar</string>
+</resources>

@@ -1,10 +1,16 @@
 package com.example.layouts.models;
 
+import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.RequiresApi;
+
 import java.time.LocalDate;
 
-public class Lugar {
+public class Lugar implements Parcelable {
 
-    private Integer id=0;
+    private Integer id = 0;
     private String nombre;
     private String direccion;
     private GeoPunto infoLugar;
@@ -15,9 +21,11 @@ public class Lugar {
     private Double valoracion;
     private TipoLugar tipoLugar;
 
+    // Constructor vacío
     public Lugar() {
     }
 
+    // Constructor que acepta todos los campos
     public Lugar(String nombre, String direccion, GeoPunto infoLugar, String imagen, String url, String comentario, LocalDate fecha, Double valoracion, TipoLugar tipoLugar) {
         this.id++;
         this.nombre = nombre;
@@ -29,6 +37,65 @@ public class Lugar {
         this.fecha = fecha;
         this.valoracion = valoracion;
         this.tipoLugar = tipoLugar;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    protected Lugar(Parcel in) {
+        id = in.readInt();
+        nombre = in.readString();
+        direccion = in.readString();
+        // Deserializa el objeto GeoPunto
+        infoLugar = in.readParcelable(GeoPunto.class.getClassLoader());
+        imagen = in.readString();
+        url = in.readString();
+        comentario = in.readString();
+        // Deserializa la fecha
+        long fechaLong = in.readLong();
+        fecha = LocalDate.ofEpochDay(fechaLong);
+        valoracion = in.readDouble();
+        // Deserializa el objeto TipoLugar
+        tipoLugar = in.readParcelable(TipoLugar.class.getClassLoader());
+    }
+
+    public static final Creator<Lugar> CREATOR = new Creator<Lugar>() {
+        @RequiresApi(api = Build.VERSION_CODES.O)
+        @Override
+        public Lugar createFromParcel(Parcel in) {
+            return new Lugar(in);
+        }
+
+        @Override
+        public Lugar[] newArray(int size) {
+            return new Lugar[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(nombre);
+        dest.writeString(direccion);
+        dest.writeParcelable(infoLugar, flags);
+        dest.writeString(imagen);
+        dest.writeString(url);
+        dest.writeString(comentario);
+        dest.writeLong(fecha.toEpochDay());
+        dest.writeDouble(valoracion);
+        dest.writeParcelable(tipoLugar, flags);
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -101,14 +168,6 @@ public class Lugar {
 
     public void setTipoLugar(TipoLugar tipoLugar) {
         this.tipoLugar = tipoLugar;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     @Override

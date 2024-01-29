@@ -1,6 +1,9 @@
 package com.example.layouts.models;
 
-public class GeoPunto {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class GeoPunto implements Parcelable {
     private Double longitud;
     private Double latitud;
 
@@ -25,7 +28,32 @@ public class GeoPunto {
         this.latitud = latitud;
     }
 
-    public GeoPunto() {
+    protected GeoPunto(Parcel in) {
+        longitud = in.readDouble();
+        latitud = in.readDouble();
+    }
+
+    public static final Creator<GeoPunto> CREATOR = new Creator<GeoPunto>() {
+        @Override
+        public GeoPunto createFromParcel(Parcel in) {
+            return new GeoPunto(in);
+        }
+
+        @Override
+        public GeoPunto[] newArray(int size) {
+            return new GeoPunto[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeDouble(longitud);
+        dest.writeDouble(latitud);
     }
 
     @Override

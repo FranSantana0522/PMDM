@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/vistaPrincipal">
+
+    <fragment
+        android:id="@+id/vistaPrincipal"
+        android:name="com.example.mislugares.fragments.vistaPrincipal"
+        android:label="@string/nombre"
+        tools:layout="@layout/vista_principal">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/detalleLugar" />
+        <action
+            android:id="@+id/action_vistaPrincipal_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_vistaPrincipal_to_acercaDe2"
+            app:destination="@id/acercaDe2" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleLugar"
+        android:name="com.example.mislugares.fragments.detalleLugar"
+        android:label="@string/nombre"
+        tools:layout="@layout/detalle_lugar">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/vistaPrincipal" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.mislugares.settings.fragments.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_vistaPrincipal"
+            app:destination="@id/vistaPrincipal" />
+    </fragment>
+    <fragment
+        android:id="@+id/acercaDe2"
+        android:name="com.example.mislugares.fragments.AcercaDe"
+        android:label="AcercaDe" >
+        <action
+            android:id="@+id/action_acercaDe2_to_vistaPrincipal"
+            app:destination="@id/vistaPrincipal" />
+    </fragment>
+</navigation>
