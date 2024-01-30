@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.detalleLugar">
+    tools:context=".fragments.EditarLugar">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -26,7 +26,7 @@
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:ems="10"
-            android:inputType="none"
+            android:inputType="text"
             android:text="@string/nombreLugar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,13 +35,13 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
+        <EditText
             android:id="@+id/textUrl"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginTop="64dp"
             android:ems="10"
-            android:inputType="none"
+            android:inputType="text"
             android:text="Url"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,7 @@
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:ems="10"
-            android:inputType="none"
+            android:inputType="text"
             android:text="@string/longitud"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textDireccion"
@@ -69,7 +69,7 @@
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:ems="10"
-            android:inputType="none"
+            android:inputType="date"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.225"
@@ -81,7 +81,7 @@
             android:id="@+id/barraValoracion"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
-            android:isIndicator="true"
+            android:isIndicator="false"
             android:numStars="5"
             android:rating="0"
             android:stepSize="0.1"
@@ -97,7 +97,7 @@
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:ems="10"
-            android:inputType="none"
+            android:inputType="text"
             android:text="@string/comentarioLugar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -115,16 +115,14 @@
             app:layout_constraintHorizontal_bias="0.225"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/barraValoracion"
-            app:layout_constraintVertical_bias="0.518"
-            android:clickable="false"
-            android:focusable="false"/>
+            app:layout_constraintVertical_bias="0.518" />
 
         <EditText
             android:id="@+id/textLatitud"
             android:layout_width="140dp"
             android:layout_height="45dp"
             android:ems="10"
-            android:inputType="none"
+            android:inputType="text"
             android:text="@string/latitud"
             app:layout_constraintBottom_toBottomOf="@+id/textLongitud"
             app:layout_constraintEnd_toEndOf="parent"
@@ -138,7 +136,7 @@
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:ems="10"
-            android:inputType="none"
+            android:inputType="text"
             android:text="@string/direccionLugar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textName"
@@ -148,17 +146,29 @@
             app:layout_constraintVertical_bias="0.032" />
 
         <Button
-            android:id="@+id/borrar"
+            android:id="@+id/btnAceptar"
             android:layout_width="408dp"
             android:layout_height="51dp"
             android:layout_marginStart="164dp"
             android:layout_marginTop="199dp"
             android:rotation="90"
-            android:text="@string/borrar"
+            android:text="@string/editarLugarBtn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.131" />
+
+        <ImageView
+            android:id="@+id/camara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_camera"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.413" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

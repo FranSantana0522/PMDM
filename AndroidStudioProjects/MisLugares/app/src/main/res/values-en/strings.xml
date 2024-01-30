@@ -28,4 +28,6 @@
     <string name="aceptarLugar">Add Site</string>
     <string name="volver">Back</string>
     <string name="borrar">Delete</string>
+    <string name="confirmarBorrar">Are you sure you want to delete this site?</string>
+    <string name="editarLugarBtn">Edit site</string>
 </resources>

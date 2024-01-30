@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
+import com.example.mislugares.fragments.EditarLugar;
 import com.example.mislugares.fragments.detalleLugar;
 import com.example.mislugares.models.GeoPunto;
 import com.example.mislugares.models.ListaLugares;
@@ -36,16 +37,15 @@ import android.view.MenuItem;
 
 import java.time.LocalDate;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements detalleLugar.OnLugarChangeListener{
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-
+    private Lugar lugar;
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         temaOscuro();
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -54,15 +54,6 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAnchorView(R.id.fab)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override
@@ -81,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.añadir) {
-
+            NavController navController = Navigation.findNavController(this,R.id.fragmentPrincipal);
+            navController.navigate(R.id.anadirLugar);
             return true;
         }
         if(id == R.id.preferencias){
@@ -94,6 +86,14 @@ public class MainActivity extends AppCompatActivity {
             NavController navController = Navigation.findNavController(this,R.id.fragmentPrincipal);
             navController.navigate(R.id.acercaDe2);
             return  true;
+        }
+        if(id == R.id.editarLugar){
+            EditarLugar editarLugar = new EditarLugar();
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("editarLugar", lugar);
+            editarLugar.setArguments(bundle);
+            NavController navController = Navigation.findNavController(this, R.id.fragmentPrincipal);
+            navController.navigate(R.id.editarLugar2, bundle);
         }
 
         return super.onOptionsItemSelected(item);
@@ -114,5 +114,10 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.fragmentPrincipal);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public void onLugarChanged(Lugar lugar) {
+        this.lugar = lugar;
     }
 }

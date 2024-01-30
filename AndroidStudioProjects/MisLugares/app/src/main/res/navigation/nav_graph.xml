@@ -20,6 +20,12 @@
         <action
             android:id="@+id/action_vistaPrincipal_to_acercaDe2"
             app:destination="@id/acercaDe2" />
+        <action
+            android:id="@+id/action_vistaPrincipal_to_anadirLugar"
+            app:destination="@id/anadirLugar" />
+        <action
+            android:id="@+id/action_vistaPrincipal_to_editarLugar2"
+            app:destination="@id/editarLugar2" />
     </fragment>
     <fragment
         android:id="@+id/detalleLugar"
@@ -46,6 +52,24 @@
         android:label="AcercaDe" >
         <action
             android:id="@+id/action_acercaDe2_to_vistaPrincipal"
+            app:destination="@id/vistaPrincipal" />
+    </fragment>
+    <fragment
+        android:id="@+id/anadirLugar"
+        android:name="com.example.mislugares.fragments.AnadirLugar"
+        android:label="fragment_anadir_lugar"
+        tools:layout="@layout/fragment_anadir_lugar" >
+        <action
+            android:id="@+id/action_anadirLugar_to_vistaPrincipal"
+            app:destination="@id/vistaPrincipal" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarLugar2"
+        android:name="com.example.mislugares.fragments.EditarLugar"
+        android:label="editar_lugar"
+        tools:layout="@layout/editar_lugar" >
+        <action
+            android:id="@+id/action_editarLugar2_to_vistaPrincipal"
             app:destination="@id/vistaPrincipal" />
     </fragment>
 </navigation>

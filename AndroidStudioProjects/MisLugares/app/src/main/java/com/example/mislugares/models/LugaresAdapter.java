@@ -75,14 +75,40 @@ public class LugaresAdapter extends RecyclerView.Adapter<LugaresAdapter.LugarVie
         public void bind(Lugar lugar) {
             nombreTextView.setText(lugar.getNombre());
             ratingBar.setRating(Float.parseFloat(lugar.getValoracion().toString()));
-            int resourceId = obtenerIdDrawable(itemView.getContext(), lugar.getImagen());
-            if (resourceId != 0) {
-                imagenImageView.setImageResource(resourceId);
+            TipoLugar tipoLugar = lugar.getTipoLugar();
+            switch (tipoLugar) {
+                case MONTANIA:
+                    imagenImageView.setImageResource(R.drawable.montanas);
+                    break;
+                case RIO:
+                    imagenImageView.setImageResource(R.drawable.rio);
+                    break;
+                case PLAYA:
+                    imagenImageView.setImageResource(R.drawable.barbadosbeach);
+                    break;
+                case LAGO:
+                    imagenImageView.setImageResource(R.drawable.lago);
+                    break;
+                case ISLA:
+                    imagenImageView.setImageResource(R.drawable.islas);
+                    break;
+                case PRADO:
+                    imagenImageView.setImageResource(R.drawable.prado);
+                    break;
+                case VALLE:
+                    imagenImageView.setImageResource(R.drawable.valle);
+                    break;
+                case PUEBLO:
+                    imagenImageView.setImageResource(R.drawable.pueblo);
+                    break;
+                case CIUDAD:
+                    imagenImageView.setImageResource(R.drawable.catedral_sevilla);
+                    break;
+                default:
+                    // En caso de que el tipo de lugar no coincida con ninguno de los casos anteriores, no se establece ninguna imagen.
+                    break;
             }
         }
-    }
-    private int obtenerIdDrawable(Context context, String nombreDrawable) {
-        return context.getResources().getIdentifier(nombreDrawable, "drawable", context.getPackageName());
     }
 }
 

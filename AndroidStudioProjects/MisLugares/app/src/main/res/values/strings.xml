@@ -27,4 +27,7 @@
     <string name="aceptarLugar">Añadir lugar</string>
     <string name="volver">Volver</string>
     <string name="borrar">Borrar</string>
+    <string name="confirmarBorrar">¿Estas seguro de que quieres borrar este lugar?</string>
+    <string name="editarLugarBtn">Editar lugar</string>
+
 </resources>
