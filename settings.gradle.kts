@@ -13,9 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ListViewAddDelete"
+rootProject.name = "Graficos3"
 include(":app")
-include(":app")
-include(":app")
-include(":app")
-include(":app")
+ 
