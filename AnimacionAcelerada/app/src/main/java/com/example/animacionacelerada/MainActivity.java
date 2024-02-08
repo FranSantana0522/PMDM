@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     boolean continuar = true;
     float velocidad = 1.5f;
 
-    float aceleracion=0.1f;
+    float aceleracion=0.5f;
     int dt = 10;
     int tiempo = 0;
     Thread hilo = null;
