@@ -10,57 +10,74 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     boolean continuar = true;
     float velocidad = 1.5f;
-
     float aceleracion=0.5f;
     int dt = 10;
     int tiempo = 0;
     Thread hilo = null;
     DinamicaView dinamica;
     float s;
+    int cantidadInsectos = 5;
+    ArrayList<DinamicaView> insectos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        dinamica = new DinamicaView(this);
-        setContentView(dinamica);
+        setContentView(R.layout.activity_main);
         s = getResources().getDisplayMetrics().density;
-        hilo = new Thread(dinamica);
-        hilo.start();
+        FrameLayout container = findViewById(R.id.container);
+
+        for (int i = 0; i < cantidadInsectos; i++) {
+            int posX = (int) (Math.random() * container.getWidth());
+            int posY = (int) (Math.random() * container.getHeight());
+            DinamicaView dinamica = new DinamicaView(this, posX, posY);
+            insectos.add(dinamica);
+
+            container.addView(dinamica);
+        }
     }
 
-    //detenemos el hilo si pausa
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        continuar = true;
+        if (hilo == null || !hilo.isAlive()) {
+            for (DinamicaView dinamicaView : insectos) {
+                if (dinamicaView != null) {
+                    hilo = new Thread(dinamicaView);
+                    hilo.start();
+                }
+            }
+        }
+    }
+
     @Override
     public void onPause() {
         super.onPause();
         continuar = false;
     }
 
-    //reiniciamos el hilo si resume
-    @Override
-    public void onResume() {
-        super.onResume();
-        continuar = true;
-        if (!hilo.isAlive()) {
-            hilo = new Thread(dinamica);
-            hilo.start();
-        }
-
-    }
     class DinamicaView extends View implements Runnable{
         int x,y,ymax,xmax;
-        Paint paintFondo,paintParticula,paint;
-        public DinamicaView(Context context) {
+        Paint paintFondo,paint;
+        Drawable imagen;
+
+        public DinamicaView(Context context, int initialX, int initialY) {
             super(context);
-            paintFondo=new Paint();
-            paintParticula=new Paint();
-            paint=new Paint();
+            x = initialX;
+            y = initialY;
+            paintFondo = new Paint();
+            paint = new Paint();
             paintFondo.setColor(Color.WHITE);
-            paintParticula.setColor(Color.RED);
             paint.setColor(Color.BLACK);
+            imagen = ContextCompat.getDrawable(context, R.drawable.bicho);
         }
         @Override
         public void run() {
@@ -92,25 +109,25 @@ public class MainActivity extends AppCompatActivity {
         }
         @Override
         protected void onSizeChanged(int w,int h,int oldw,int oldh){
-            x=w/2;
-            y=0;
+            super.onSizeChanged(w, h, oldw, oldh);
             ymax=h;
             xmax=w;
         }
         @Override
-        public void onDraw(Canvas canvas) {
+        protected void onDraw(Canvas canvas) {
             canvas.drawPaint(paintFondo);
-            paint.setTextSize(20 * s);
-            canvas.drawCircle(x, y, 30 * s, paintParticula);
-            canvas.drawText("y= " + y, 10 * s, 25 * s, paint);
-            canvas.drawText("x= " + x, 10 * s, 50 * s, paint);
-            canvas.drawText("tiempo= " + tiempo, 10 * s, 75 * s, paint);
-            Drawable imagen = ContextCompat.getDrawable(getApplicationContext(), R.drawable.bicho);
-            int ancho= ContextCompat .getDrawable(getContext(),R.drawable.bicho).getIntrinsicWidth();
-            int alto=ContextCompat .getDrawable(getContext(),R.drawable.bicho).getIntrinsicHeight();
-            imagen.setBounds( 0,0,ancho,alto);
-            imagen.draw(canvas);
+            int anchoImagen = imagen.getIntrinsicWidth();
+            int altoImagen = imagen.getIntrinsicHeight();
 
+            int nuevoAncho = anchoImagen / 4;
+            int nuevoAlto = altoImagen / 4;
+
+            int xImagen = x - nuevoAncho / 2;
+            int yImagen = y - nuevoAlto / 2;
+
+            imagen.setBounds(xImagen, yImagen, xImagen + nuevoAncho, yImagen + nuevoAlto);
+            imagen.draw(canvas);
         }
+
     }
 }
