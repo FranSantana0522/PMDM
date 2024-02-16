@@ -27,4 +27,24 @@
         android:text="Puntuación: 0"
         android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/btn1X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="204dp"
+        android:layout_marginBottom="654dp"
+        android:text="btn1 X:" />
+
+    <TextView
+        android:id="@+id/btn2X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="205dp"
+        android:layout_marginBottom="625dp"
+        android:text="btn2 X:" />
+
 </RelativeLayout>
