@@ -5,13 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-    // ENLACE EJEMPLO EN JAVA DE JUEGO EL DINOSAURIO
-// https://www.youtube.com/watch?v=R11qccSU9wA
-    //PAGINA
-    // https://medium.com/@matthewheekim/chrome-dinosaur-game-with-java-1677e954cf89
+    //https://www.youtube.com/watch?v=bQjfmB3lRoA
+    // https://es.pixilart.com/draw/edit-your-8-bit-c8fb7d520785af1 dibujo del dinosaurio
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        GameSurfaceView game= new GameSurfaceView(this);
+        setContentView(game);
+
     }
 }
