@@ -49,7 +49,6 @@ public class GameSurfaceView extends SurfaceView implements SurfaceHolder.Callba
     public GameSurfaceView(Context context) {
         this(context, null);
     }
-
     public GameSurfaceView(Context context, AttributeSet attrs) {
         super(context, attrs);
         Laberinto laberintoObj = new Laberinto();
@@ -217,7 +216,7 @@ public class GameSurfaceView extends SurfaceView implements SurfaceHolder.Callba
                     detenerJuego();
                 }
                 break;
-            case 3: // Casilla con peligro
+            case 3: // Casilla con pincho
                 // Restar vidas
                 vidas--;
                 if (mediaPlayerDaño != null) {
@@ -306,8 +305,8 @@ public class GameSurfaceView extends SurfaceView implements SurfaceHolder.Callba
             Canvas canvas = holder.lockCanvas();
             if (canvas != null) {
                 dibujarLaberinto(canvas);
-                dibujarPersonaje(canvas); // Dibujar el personaje
-                dibujarBoton(canvas); // Dibujar el botón
+                dibujarPersonaje(canvas);
+                dibujarBoton(canvas);
                 holder.unlockCanvasAndPost(canvas);
             }
         }
@@ -325,7 +324,7 @@ public class GameSurfaceView extends SurfaceView implements SurfaceHolder.Callba
 
     @Override
     public void surfaceDestroyed(@NonNull SurfaceHolder holder) {
-        handler.removeCallbacksAndMessages(null); // Detener los cambios de los triángulos
+        handler.removeCallbacksAndMessages(null);
     }
 
     private void dibujarLaberinto(Canvas canvas) {
@@ -356,15 +355,15 @@ public class GameSurfaceView extends SurfaceView implements SurfaceHolder.Callba
                 }
             }
         }
-        String textoVidas = "Vidas restantes: " + vidas+"/5"; // Texto que quieres mostrar
-        paint.setColor(Color.BLACK); // Color del texto
-        paint.setTextSize(75); // Tamaño del texto
-        canvas.drawText(textoVidas, 20, getHeight() - 550, paint); // Dibujar el texto
+        String textoVidas = "Vidas restantes: " + vidas+"/5";
+        paint.setColor(Color.BLACK);
+        paint.setTextSize(75);
+        canvas.drawText(textoVidas, 20, getHeight() - 550, paint);
 
-        String textoPuntuacion = "Puntuación: " + puntos+"/"+maxPuntos; // Texto que quieres mostrar
-        paint.setColor(Color.BLACK); // Color del texto
-        paint.setTextSize(75); // Tamaño del texto
-        canvas.drawText(textoPuntuacion, 20, getHeight() - 450, paint); // Dibujar el texto
+        String textoPuntuacion = "Puntuación: " + puntos+"/"+maxPuntos;
+        paint.setColor(Color.BLACK);
+        paint.setTextSize(75);
+        canvas.drawText(textoPuntuacion, 20, getHeight() - 450, paint);
 
         if (juegoTerminado) {
             String textoVictoria = "¡Has ganado!";
